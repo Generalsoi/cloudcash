@@ -1,8 +1,11 @@
+import { Routes, Route } from "react-router-dom";
+import { Login } from "./routes/login.tsx";
+
 function App() {
   return (
-    <div className="App font-quickSand">
-      <h1>Welcome to CloudCash</h1>
-    </div>
+    <Routes>
+      <Route path="/" element={<Login />} />
+    </Routes>
   );
 }
 
