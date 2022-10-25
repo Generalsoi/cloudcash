@@ -13,20 +13,33 @@ export const Login = () => {
         />
       </div>
       <div className="w-[50%] flex items-center justify-center font-quickSand">
-        <div className="w-[60%] h-fit p-5 bg-white border rounded-lg">
-          <h1 className="font-bold text-xl place-self-center">
+        <div className="w-[50%] h-fit p-5 bg-white border rounded-lg">
+          <h1 className="font-bold text-xl text-center">
             Welcome to Cloud cash
           </h1>
           <form action="">
-            <div>
-              <input type="email" placeholder="Enter email" />
+            <div className="w-full h-12 my-4">
+              <input
+                type="email"
+                placeholder="Enter email"
+                className="w-full h-10 p-3 border shadow-sm border-slate-400 rounded-lg text-sm focus:outline-none focus: border-slate-800"
+              />
             </div>
-            <div>
-              <input type="password" />
+            <div className="w-full h-12 my-4">
+              <input
+                type="password"
+                placeholder="Enter password"
+                className="w-full h-10 p-3 border shadow-sm border-slate-400 rounded-lg text-sm focus:outline-none focus: border-slate-800"
+              />
             </div>
-            <div>
-              <button>
-                <img src={GoogleIcon} alt="google-icon" />
+            <div className="w-full h-12 my-4">
+              <button className="w-full h-10 flex items-center justify-center text-sm bg-[#2C73EB] text-white font-bold border rounded-lg shadow-sm">
+                Sign up
+              </button>
+            </div>
+            <div className="w-full h-12 my-4">
+              <button className="w-full h-10 flex items-center justify-center gap-4 text-sm font-bold bg-[#3977e3] text-white border rounded-lg shadow-sm">
+                <img src={GoogleIcon} alt="google-icon" className="w-6 h-6" />
                 <p>Sign in with Google</p>
               </button>
             </div>
