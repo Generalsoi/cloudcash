@@ -8,17 +8,17 @@ export const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="flex w-full items-center justify-center">
-      <div className="w-[50%]">
+    <div className="flex flex-col md:flex-row w-full items-center justify-center">
+      <div className="h-[20%] md:h-[screen] md:w-[50%]">
         <img
           src={Illustration}
           alt="illustration-vector"
-          className="w-full h-screen"
+          className="w-full h-[20%] md:h-screen"
         />
       </div>
-      <div className="w-[50%] flex items-center justify-center font-quickSand">
-        <div className="w-[50%] h-fit p-5 bg-white border rounded-lg">
-          <h1 className="font-bold text-xl text-center">
+      <div className="w-full md:w-[50%] h-[80%] md:h-screen flex items-center justify-center font-quickSand">
+        <div className="w-[80%] md:w-[50%] h-fit p-5 bg-white border rounded-lg">
+          <h1 className="font-bold text-xl text-center my-8">
             Welcome to Cloud cash
           </h1>
           <form action="">
@@ -29,7 +29,7 @@ export const Login = () => {
                 className="w-full h-10 p-3 border shadow-sm border-slate-400 rounded-lg text-sm focus:outline-none focus: border-slate-800"
               />
             </div>
-            <div className="w-full h-10 my-4 p-3 flex justify-between border shadow-sm border-slate-400 rounded-lg text-sm focus:outline-none focus: border-slate-800">
+            <div className="w-full h-10 my-5 p-3 flex justify-between border shadow-sm border-slate-400 rounded-lg text-sm focus:outline-none focus: border-slate-800">
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter password"
