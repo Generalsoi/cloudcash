@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Illustration from "../assets/illustrations/finance.png";
 import GoogleIcon from "../assets/images/googleicon.png";
+import { BsFillEyeSlashFill } from "react-icons/bs";
+import { BsFillEyeFill } from "react-icons/bs";
 
 export const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
     <div className="flex w-full items-center justify-center">
       <div className="w-[50%]">
@@ -25,12 +29,23 @@ export const Login = () => {
                 className="w-full h-10 p-3 border shadow-sm border-slate-400 rounded-lg text-sm focus:outline-none focus: border-slate-800"
               />
             </div>
-            <div className="w-full h-12 my-4">
+            <div className="w-full h-10 my-4 p-3 flex justify-between border shadow-sm border-slate-400 rounded-lg text-sm focus:outline-none focus: border-slate-800">
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 placeholder="Enter password"
-                className="w-full h-10 p-3 border shadow-sm border-slate-400 rounded-lg text-sm focus:outline-none focus: border-slate-800"
+                className="w-full outline-none"
               />
+              {showPassword ? (
+                <BsFillEyeSlashFill
+                  className="place-self-center"
+                  onClick={() => setShowPassword(!showPassword)}
+                />
+              ) : (
+                <BsFillEyeFill
+                  className="place-self-center"
+                  onClick={() => setShowPassword(!showPassword)}
+                />
+              )}
             </div>
             <div className="w-full h-12 my-4">
               <button className="w-full h-10 flex items-center justify-center text-sm bg-[#2C73EB] text-white font-bold border rounded-lg shadow-sm">
