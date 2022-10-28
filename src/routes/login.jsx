@@ -52,7 +52,10 @@ export const Login = () => {
               )}
             </div>
             <div className="w-full h-12 my-4">
-              <button className="w-full h-10 flex items-center justify-center text-sm bg-[#2C73EB] text-white font-bold border rounded-lg shadow-sm">
+              <button
+                type="submit"
+                className="w-full h-10 flex items-center justify-center text-sm bg-[#2C73EB] text-white font-bold border rounded-lg shadow-sm"
+              >
                 Log in
               </button>
             </div>

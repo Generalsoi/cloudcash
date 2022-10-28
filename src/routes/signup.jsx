@@ -8,6 +8,7 @@ export const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   return (
     <div className="flex flex-col md:flex-row w-full items-center justify-center ">
@@ -23,7 +24,7 @@ export const Signup = () => {
           <h1 className="font-bold text-xl text-center my-8">
             Welcome to Cloud cash
           </h1>
-          <form action="">
+          <form onSubmit={handleSignUp}>
             <div className="w-full h-12 my-4">
               <input
                 type="email"
@@ -51,7 +52,10 @@ export const Signup = () => {
               )}
             </div>
             <div className="w-full h-12 my-4">
-              <button className="w-full h-10 flex items-center justify-center text-sm bg-[#2C73EB] text-white font-bold border rounded-lg shadow-sm">
+              <button
+                type="submit"
+                className="w-full h-10 flex items-center justify-center text-sm bg-[#2C73EB] text-white font-bold border rounded-lg shadow-sm"
+              >
                 Sign up
               </button>
             </div>
