@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Illustration from "../assets/illustrations/finance.png";
 import { BsFillEyeSlashFill } from "react-icons/bs";
 import { BsFillEyeFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 
 export const Signup = () => {
@@ -11,6 +11,8 @@ export const Signup = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const { createUser } = UserAuth();
 
@@ -21,6 +23,7 @@ export const Signup = () => {
     try {
       await createUser(email, password);
       setIsLoading(false);
+      navigate("/dashboard");
     } catch (error) {
       setError(error.message);
       setIsLoading(true);
@@ -70,8 +73,8 @@ export const Signup = () => {
               )}
             </div>
             {error && (
-              <div className="w-full p-3 h-10">
-                <p className="text-red-500 font-bold text-sm">{error}</p>
+              <div className="w-full p-3">
+                <p className="text-red-500 font-bold text-xs">{error}</p>
               </div>
             )}
             <div className="w-full h-12 my-4">
