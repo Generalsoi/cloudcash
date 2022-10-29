@@ -19,11 +19,11 @@ export const Login = () => {
           <h1 className="text-[#0F4264] font-extrabold">cloudcash</h1>
         </div>
         <div className="w-[80%] md:w-[60%] h-fit p-5 bg-white ">
-          <h1 className="font-bold text-xl my-8">Welcome back!</h1>
+          <h1 className="font-bold text-2xl my-8">Welcome back!</h1>
           <div className="w-full h-12 my-4">
             <button className="w-full h-10 flex items-center justify-center gap-4 text-sm font-bold  bg-white border border-[#3977e3] rounded-lg shadow-sm">
               <img src={GoogleIcon} alt="google-icon" className="w-6 h-6" />
-              <p className="text-[#3977e3]">Sign in with Google</p>
+              <p className="text-[#3977e3]">Log in with Google</p>
             </button>
           </div>
           <div className="my-8 flex items-center gap-1 justify-center w-full">
