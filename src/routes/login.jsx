@@ -5,11 +5,28 @@ import { BsFillEyeSlashFill } from "react-icons/bs";
 import { BsFillEyeFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/logo.png";
+import { UserAuth } from "../context/AuthContext";
 
 export const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const { loginUser } = UserAuth();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setError("");
+
+    try {
+      await loginUser(email, password);
+      console.log("login successful");
+    } catch (error) {
+      setError(error.message);
+      console.log(error.message);
+    }
+  };
 
   return (
     <div className="flex flex-col md:flex-row w-full items-center justify-center">
@@ -31,7 +48,7 @@ export const Login = () => {
             <p>or</p>
             <hr className="border-1 border-[#3977e3] w-[30%]" />
           </div>
-          <form action="">
+          <form onSubmit={handleLogin}>
             <div className="w-full h-12 my-4">
               <input
                 type="email"
