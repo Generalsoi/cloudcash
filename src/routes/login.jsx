@@ -6,12 +6,14 @@ import { BsFillEyeFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/logo.png";
 import { UserAuth } from "../context/AuthContext";
+import { SpinLoaderIcon } from "../assets/svgs/spinloader";
 
 export const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const { loginUser } = UserAuth();
 
@@ -21,9 +23,11 @@ export const Login = () => {
 
     try {
       await loginUser(email, password);
+      setIsLoading(true);
       console.log("login successful");
     } catch (error) {
       setError(error.message);
+      setIsLoading(false);
       console.log(error.message);
     }
   };
@@ -80,6 +84,7 @@ export const Login = () => {
                 type="submit"
                 className="w-full h-10 flex items-center justify-center text-sm bg-[#2C73EB] text-white font-bold border rounded-lg shadow-sm"
               >
+                {isLoading && <SpinLoaderIcon />}
                 Log in
               </button>
             </div>
