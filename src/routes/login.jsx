@@ -3,7 +3,7 @@ import Illustration from "../assets/illustrations/finance.png";
 import GoogleIcon from "../assets/images/googleicon.png";
 import { BsFillEyeSlashFill } from "react-icons/bs";
 import { BsFillEyeFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../assets/images/logo.png";
 import { UserAuth } from "../context/AuthContext";
 import { SpinLoaderIcon } from "../assets/svgs/spinloader";
@@ -17,6 +17,8 @@ export const Login = () => {
 
   const { loginUser } = UserAuth();
 
+  const navigate = useNavigate();
+
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
@@ -24,6 +26,7 @@ export const Login = () => {
     try {
       await loginUser(email, password);
       setIsLoading(true);
+      navigate("/dashboard");
       console.log("login successful");
     } catch (error) {
       setError(error.message);
@@ -66,6 +69,7 @@ export const Login = () => {
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter password"
                 className="w-full outline-none"
+                onChange={(e) => setPassword(e.target.value)}
               />
               {showPassword ? (
                 <BsFillEyeSlashFill
@@ -84,7 +88,7 @@ export const Login = () => {
                 type="submit"
                 className="w-full h-10 flex items-center justify-center text-sm bg-[#2C73EB] text-white font-bold border rounded-lg shadow-sm"
               >
-                {isLoading && <SpinLoaderIcon />}
+                {error ? !isLoading : isLoading && <SpinLoaderIcon />}
                 Log in
               </button>
             </div>
