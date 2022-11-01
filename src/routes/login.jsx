@@ -27,7 +27,6 @@ export const Login = () => {
       await loginUser(email, password);
       setIsLoading(true);
       navigate("/dashboard");
-      console.log("login successful");
     } catch (error) {
       setError(error.message);
       setIsLoading(false);
@@ -83,6 +82,11 @@ export const Login = () => {
                 />
               )}
             </div>
+            {error && (
+              <div className="w-full p-3">
+                <p className="text-red-500 font-bold text-xs">{error}</p>
+              </div>
+            )}
             <div className="w-full h-12 my-4">
               <button
                 type="submit"
