@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Illustration from "../assets/illustrations/finance.png";
 import GoogleIcon from "../assets/images/googleicon.png";
 import { BsFillEyeSlashFill } from "react-icons/bs";
@@ -15,7 +15,7 @@ export const Login = () => {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const { loginUser } = UserAuth();
+  const { loginUser, googleSignIn, user } = UserAuth();
 
   const navigate = useNavigate();
 
@@ -34,6 +34,21 @@ export const Login = () => {
     }
   };
 
+  const handleGoogleSignIn = async () => {
+    setError("");
+    try {
+      await googleSignIn();
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  useEffect(() => {
+    if (user != null) {
+      navigate("/dashboard");
+    }
+  }, []);
+
   return (
     <div className="flex flex-col md:flex-row w-full items-center justify-center">
       <div className="w-full md:w-[40%] h-[80%] md:h-screen flex items-center justify-center font-quickSand relative">
@@ -44,7 +59,10 @@ export const Login = () => {
         <div className="w-[80%] md:w-[60%] h-fit p-5 bg-white ">
           <h1 className="font-bold text-2xl my-8">Welcome back!</h1>
           <div className="w-full h-12 my-4">
-            <button className="w-full h-10 flex items-center justify-center gap-4 text-sm font-bold  bg-white border border-[#3977e3] rounded-lg shadow-sm">
+            <button
+              className="w-full h-10 flex items-center justify-center gap-4 text-sm font-bold  bg-white border border-[#3977e3] rounded-lg shadow-sm"
+              onClick={handleGoogleSignIn}
+            >
               <img src={GoogleIcon} alt="google-icon" className="w-6 h-6" />
               <p className="text-[#3977e3]">Log in with Google</p>
             </button>
