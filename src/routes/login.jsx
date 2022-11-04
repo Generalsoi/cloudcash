@@ -35,11 +35,11 @@ export const Login = () => {
   };
 
   const handleGoogleSignIn = async () => {
-    setError("");
     try {
       await googleSignIn();
     } catch (error) {
       setError(error.message);
+      console.log(error);
     }
   };
 
