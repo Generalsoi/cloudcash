@@ -16,54 +16,41 @@ export const Sidebar = ({ open }) => {
     logOut();
   };
 
-  const handleActive = () => {
-    setActive(!active);
-  };
+  // array of the sidebar menus
+  const sidebarMenus = [
+    { title: "Overview", src: <BsGraphUp /> },
+    { title: "Transactions", src: <BsListUl /> },
+    { title: "Cards", src: <BsFillCreditCardFill /> },
+    { title: "Invoices", src: <AiTwotoneFileImage /> },
+    { title: "Goals", src: <TfiMedall /> },
+    { title: "Settings", src: <FiSettings /> },
+  ];
 
   return (
-    <div className="h-screen p-6 flex flex-col ">
+    <div className="h-screen p-5 flex flex-col ">
       <div className="h-1/9 flex gap-2 items-end p-4">
-        <img src={Logo} alt="cloudcashlogo" />
-        <h1 className="text-[#0F4264] font-extrabold">cloudcash</h1>
+        <img
+          src={Logo}
+          alt="cloudcashlogo"
+          className={`${!open && "h-15 w-15"}`}
+        />
+        <h1 className={`${!open && "hidden"} text-[#0F4264] font-extrabold`}>
+          Cloudcash
+        </h1>
       </div>
 
       <ul className="h-7/9 mt-8 px-4 font-quickSand">
-        <li
-          className={`flex items-center h-8 my-2 gap-4 text-[#C7C7C7] text-lg cursor-pointer hover:text-[#197BBD] hover:bg-[#F0F7FF] border border-none rounded-lg p-5`}
-          onClick={handleActive}
-        >
-          <BsGraphUp />
-          Overview
-        </li>
-        <li
-          className={`flex items-center h-8 my-2 gap-4 text-[#C7C7C7] text-lg cursor-pointer hover:text-[#197BBD] hover:bg-[#F0F7FF] border border-none rounded-lg p-5`}
-        >
-          <BsListUl /> Transactions
-        </li>
-        <li
-          className={`flex items-center h-8 my-2 gap-4 text-[#C7C7C7] text-lg cursor-pointer hover:text-[#197BBD] hover:bg-[#F0F7FF] border border-none rounded-lg p-5`}
-        >
-          <BsFillCreditCardFill />
-          Cards
-        </li>
-        <li
-          className={`flex items-center h-8 my-2 gap-4 text-[#C7C7C7] text-lg cursor-pointer hover:text-[#197BBD] hover:bg-[#F0F7FF] border border-none rounded-lg p-5`}
-        >
-          <AiTwotoneFileImage />
-          Invoices
-        </li>
-        <li
-          className={`flex items-center h-8 my-2 gap-4 text-[#C7C7C7] text-lg cursor-pointer hover:text-[#197BBD] hover:bg-[#F0F7FF] border border-none rounded-lg p-5`}
-        >
-          <TfiMedall />
-          Goals
-        </li>
-        <li
-          className={`flex items-center h-8 my-2 gap-4 text-[#C7C7C7] text-lg cursor-pointer hover:text-[#197BBD] hover:bg-[#F0F7FF] border border-none rounded-lg p-5`}
-        >
-          <FiSettings />
-          Settings
-        </li>
+        {sidebarMenus.map((menu, index) => (
+          <li
+            key={index}
+            className="flex gap-3 items-center mt-6 cursor-pointer"
+          >
+            <span className={`${!open && "h-10 w-10"}`}>{menu.src}</span>
+            <span className={`${!open && "hidden"} duration-200`}>
+              {menu.title}
+            </span>
+          </li>
+        ))}
       </ul>
 
       <div className="h-1/9 absolute bottom-4">
