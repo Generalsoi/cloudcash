@@ -21,3 +21,41 @@ export const SpinLoaderIcon = () => {
     </svg>
   );
 };
+
+// export const LoaderIconTwo = () => {
+//   return (
+//     <svg
+//       xmlns="http://www.w3.org/2000/svg"
+//       xmlns:xlink="http://www.w3.org/1999/xlink"
+//       style="margin: auto; background: rgb(255, 255, 255); display: block; --darkreader-inline-bgimage: initial; --darkreader-inline-bgcolor:#181a1b;"
+//       width="200px"
+//       height="200px"
+//       viewBox="0 0 100 100"
+//       preserveAspectRatio="xMidYMid"
+//       data-darkreader-inline-bgimage=""
+//       data-darkreader-inline-bgcolor=""
+//     >
+//       <circle
+//         cx="50"
+//         cy="50"
+//         r="32"
+//         stroke-width="8"
+//         stroke="#fe718d"
+//         stroke-dasharray="50.26548245743669 50.26548245743669"
+//         fill="none"
+//         stroke-linecap="round"
+//         data-darkreader-inline-stroke=""
+//         style="--darkreader-inline-stroke:#fe6987;"
+//       >
+//         <animateTransform
+//           attributeName="transform"
+//           type="rotate"
+//           repeatCount="indefinite"
+//           dur="1s"
+//           keyTimes="0;1"
+//           values="0 50 50;360 50 50"
+//         ></animateTransform>
+//       </circle>
+//     </svg>
+//   );
+// };

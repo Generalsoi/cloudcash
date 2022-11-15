@@ -8,7 +8,7 @@ import { FiSettings } from "react-icons/fi";
 import { TfiMedall } from "react-icons/tfi";
 import { AiTwotoneFileImage } from "react-icons/ai";
 
-export const Sidebar = () => {
+export const Sidebar = ({ open }) => {
   const { logOut } = UserAuth();
   const [active, setActive] = useState(false);
 
