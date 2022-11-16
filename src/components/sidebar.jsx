@@ -7,6 +7,7 @@ import { BsGraphUp } from "react-icons/bs";
 import { FiSettings } from "react-icons/fi";
 import { TfiMedall } from "react-icons/tfi";
 import { AiTwotoneFileImage } from "react-icons/ai";
+import { BiLogOutCircle } from "react-icons/bi";
 
 export const Sidebar = ({ open }) => {
   const { logOut } = UserAuth();
@@ -29,11 +30,7 @@ export const Sidebar = ({ open }) => {
   return (
     <div className="h-screen p-5 flex flex-col ">
       <div className="h-1/9 flex gap-2 items-end p-4">
-        <img
-          src={Logo}
-          alt="cloudcashlogo"
-          className={`${!open && "h-15 w-15"}`}
-        />
+        <img src={Logo} alt="cloudcashlogo" />
         <h1 className={`${!open && "hidden"} text-[#0F4264] font-extrabold`}>
           Cloudcash
         </h1>
@@ -53,8 +50,14 @@ export const Sidebar = ({ open }) => {
         ))}
       </ul>
 
-      <div className="h-1/9 absolute bottom-4">
-        <button onClick={handleLogout}>Logout</button>
+      <div className={`h-1/9 absolute p-4 ${!open && "p-0"} bottom-4`}>
+        <button
+          onClick={handleLogout}
+          className="w-fit h-8 border rounded-lg flex items-center p-4 gap-x-4"
+        >
+          <BiLogOutCircle />{" "}
+          <span className={`${!open && "hidden"}`}>Logout</span>
+        </button>
       </div>
     </div>
   );
