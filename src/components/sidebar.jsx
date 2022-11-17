@@ -29,11 +29,11 @@ export const Sidebar = ({ open }) => {
 
   return (
     <div className="h-screen p-5 flex flex-col ">
-      <div className="h-1/9 flex gap-2 items-end p-4">
+      <div className={`flex gap-2 items-end ${open ? "p-4" : "p-1"}`}>
         <img src={Logo} alt="cloudcashlogo" />
         <h1
           className={`${
-            !open && "hidden"
+            !open && "scale-0"
           } text-[#0F4264] font-extrabold duration-200`}
         >
           Cloudcash
@@ -44,20 +44,24 @@ export const Sidebar = ({ open }) => {
         {sidebarMenus.map((menu, index) => (
           <li
             key={index}
-            className="flex gap-3 items-center mt-6 cursor-pointer"
+            className={`flex gap-3 items-center mt-6 cursor-pointer hover:bg-[#F0F7FF] hover:py-2 hover:px-3 hover:text-[#197BBD] hover:font-extrabold border border-none rounded-lg duration-200 ${
+              !open && "justify-center h-fit w-fit hover:p-1"
+            }`}
           >
             <span className={`${!open && "h-10 w-10"}`}>{menu.src}</span>
-            <span className={`${!open && "hidden"} duration-200`}>
+            <span className={`${!open && "hidden"} duration-200 `}>
               {menu.title}
             </span>
           </li>
         ))}
       </ul>
 
-      <div className={`h-1/9 absolute p-4 ${!open && "p-0"} bottom-4`}>
+      <div className={` absolute p-4 ${!open && "p-0"} bottom-4`}>
         <button
           onClick={handleLogout}
-          className="w-fit h-8 border border-none rounded-lg flex items-center p-4 gap-x-4 bg-[#FFC145]"
+          className={`${
+            open ? "w-48" : "w-fit duration-200"
+          } h-8 border border-none rounded-lg flex items-center p-4 gap-x-4 bg-[#FFC145]`}
         >
           <BiLogOutCircle />{" "}
           <span className={`${!open && "hidden"}`}>Logout</span>

@@ -21,7 +21,7 @@ export const Dashboard = () => {
       <div
         className={`${
           open ? "w-72" : "w-20"
-        } duration-300 min-h-screen border border-r-[#595656] border-t-0 border-l-0 border-b-0 relative`}
+        } duration-200 min-h-screen border border-r-[#595656] border-t-0 border-l-0 border-b-0 relative`}
       >
         <Sidebar open={open} />
         <div className="absolute -right-3 top-4 cursor-pointer">
