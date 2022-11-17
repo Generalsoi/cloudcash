@@ -31,7 +31,11 @@ export const Sidebar = ({ open }) => {
     <div className="h-screen p-5 flex flex-col ">
       <div className="h-1/9 flex gap-2 items-end p-4">
         <img src={Logo} alt="cloudcashlogo" />
-        <h1 className={`${!open && "hidden"} text-[#0F4264] font-extrabold`}>
+        <h1
+          className={`${
+            !open && "hidden"
+          } text-[#0F4264] font-extrabold duration-200`}
+        >
           Cloudcash
         </h1>
       </div>
@@ -53,7 +57,7 @@ export const Sidebar = ({ open }) => {
       <div className={`h-1/9 absolute p-4 ${!open && "p-0"} bottom-4`}>
         <button
           onClick={handleLogout}
-          className="w-fit h-8 border rounded-lg flex items-center p-4 gap-x-4"
+          className="w-fit h-8 border border-none rounded-lg flex items-center p-4 gap-x-4 bg-[#FFC145]"
         >
           <BiLogOutCircle />{" "}
           <span className={`${!open && "hidden"}`}>Logout</span>
