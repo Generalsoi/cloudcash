@@ -66,7 +66,7 @@ export const Sidebar = ({ open }) => {
           onClick={handleLogout}
           className={`${
             open ? "w-48" : "w-fit duration-200"
-          } h-8 border border-none rounded-lg flex items-center p-4 gap-x-4 bg-[#FFC145]`}
+          } h-8 border border-none rounded-lg flex items-center p-4 gap-x-4 bg-[#FFC145] hover:bg-orange-300`}
         >
           <BiLogOutCircle />{" "}
           <span className={`${!open && "hidden"}`}>Logout</span>
