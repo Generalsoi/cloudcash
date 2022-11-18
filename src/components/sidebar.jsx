@@ -45,10 +45,15 @@ export const Sidebar = ({ open }) => {
           <li
             key={index}
             className={`flex gap-3 items-center mt-6 cursor-pointer hover:bg-[#F0F7FF] hover:py-2 hover:px-3 hover:text-[#197BBD] hover:font-extrabold border border-none rounded-lg duration-200 ${
-              !open && "justify-center h-fit w-fit hover:p-1"
+              !open &&
+              "justify-center h-fit w-fit hover:px-0 hover:py-0 gap-0 hover:bg-white"
             }`}
           >
-            <span className={`${!open && "h-10 w-10"}`}>{menu.src}</span>
+            <span
+              className={`${!open && "h-10 w-10 m-0 hover:font-extrabold"}`}
+            >
+              {menu.src}
+            </span>
             <span className={`${!open && "hidden"} duration-200 `}>
               {menu.title}
             </span>

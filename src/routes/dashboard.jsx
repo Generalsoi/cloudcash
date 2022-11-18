@@ -38,7 +38,7 @@ export const Dashboard = () => {
           )}
         </div>
       </div>
-      <div>
+      <div className={`w-full`}>
         <Content />
       </div>
     </div>
