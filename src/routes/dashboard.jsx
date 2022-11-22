@@ -17,7 +17,13 @@ export const Dashboard = () => {
   };
 
   return (
-    <div className="w-full h-screen flex items-start ">
+    <div
+      className="w-full h-screen flex items-start "
+      style={{
+        background:
+          "linear-gradient(121.32deg, #FFFFFF 10.96%, #FFFFFF 72%, #FFFFFF 99.98%)",
+      }}
+    >
       <div
         className={`${
           open ? "w-72" : "w-20"
