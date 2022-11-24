@@ -100,8 +100,17 @@ export const Content = () => {
               <span className="text-[#AEAEAE]">Deactivate card</span>
             </div>
           </div>
-          <div>
-            <h2>Transaction history</h2>
+
+          <div
+            className="w-full h-fit mt-6 p-6 bg-white border rounded-2xl "
+            style={{
+              boxShadow:
+                "0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04)",
+            }}
+          >
+            <h2 className="text-[#404040] text-xl font-bold mb-4 font-quickSand">
+              Transaction history
+            </h2>
 
             <table>
               <tr>
