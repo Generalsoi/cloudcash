@@ -7,6 +7,39 @@ import Creditcard from "../assets/images/creditcard.png";
 export const Content = () => {
   const { user } = UserAuth();
 
+  const transactionHist = [
+    {
+      receiver: "Tesco Market",
+      type: "Shopping",
+      date: "03 Dec 2020",
+      amount: "$75.62",
+    },
+    {
+      receiver: "ElectroMen Market",
+      type: "Shopping",
+      date: "14 Dec 2020",
+      amount: "$250.00",
+    },
+    {
+      receiver: "Fiorgio Restaurant",
+      type: "Food",
+      date: "07 Dec 2020",
+      amount: "$18.42",
+    },
+    {
+      receiver: "John Matthew Kane",
+      type: "Sport",
+      date: "06 Dec 2020",
+      amount: "$352",
+    },
+    {
+      receiver: "Ann Malin",
+      type: "Shopping",
+      date: "25 Nov 2020",
+      amount: "$425",
+    },
+  ];
+
   // console.log (user)
 
   return (
@@ -67,7 +100,25 @@ export const Content = () => {
               <span className="text-[#AEAEAE]">Deactivate card</span>
             </div>
           </div>
-          <div></div>
+          <div>
+            <h2>Transaction history</h2>
+
+            <table>
+              <tr>
+                {Object.keys(transactionHist[0]).map((title) => (
+                  <th>{title}</th>
+                ))}
+              </tr>
+              {transactionHist.map((transaction) => (
+                <tr>
+                  <td>{transaction.receiver}</td>
+                  <td>{transaction.type}</td>
+                  <td>{transaction.date}</td>
+                  <td>{transaction.amount}</td>
+                </tr>
+              ))}
+            </table>
+          </div>
         </div>
         <div></div>
       </section>
