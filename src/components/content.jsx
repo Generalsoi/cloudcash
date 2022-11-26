@@ -9,34 +9,34 @@ export const Content = () => {
 
   const transactionHist = [
     {
-      receiver: "Tesco Market",
-      type: "Shopping",
-      date: "03 Dec 2020",
-      amount: "$75.62",
+      Receiver: "Tesco Market",
+      Type: "Shopping",
+      Date: "03 Dec 2020",
+      Amount: "$75.62",
     },
     {
-      receiver: "ElectroMen Market",
-      type: "Shopping",
-      date: "14 Dec 2020",
-      amount: "$250.00",
+      Receiver: "ElectroMen Market",
+      Type: "Shopping",
+      Date: "14 Dec 2020",
+      Amount: "$250.00",
     },
     {
-      receiver: "Fiorgio Restaurant",
-      type: "Food",
-      date: "07 Dec 2020",
-      amount: "$18.42",
+      Receiver: "Fiorgio Restaurant",
+      Type: "Food",
+      Date: "07 Dec 2020",
+      Amount: "$18.42",
     },
     {
-      receiver: "John Matthew Kane",
-      type: "Sport",
-      date: "06 Dec 2020",
-      amount: "$352",
+      Receiver: "John Matthew Kane",
+      Type: "Sport",
+      Date: "06 Dec 2020",
+      Amount: "$352",
     },
     {
-      receiver: "Ann Malin",
-      type: "Shopping",
-      date: "25 Nov 2020",
-      amount: "$425",
+      Receiver: "Ann Malin",
+      Type: "Shopping",
+      Date: "25 Nov 2020",
+      Amount: "$425",
     },
   ];
 
@@ -112,20 +112,26 @@ export const Content = () => {
               Transaction history
             </h2>
 
-            <table>
-              <tr>
-                {Object.keys(transactionHist[0]).map((title) => (
-                  <th>{title}</th>
-                ))}
-              </tr>
-              {transactionHist.map((transaction) => (
+            <table className="table-auto w-full">
+              <thead>
                 <tr>
-                  <td>{transaction.receiver}</td>
-                  <td>{transaction.type}</td>
-                  <td>{transaction.date}</td>
-                  <td>{transaction.amount}</td>
+                  {Object.keys(transactionHist[0]).map((title) => (
+                    <th className="py-2 px-4 text-left text-gray-500">
+                      {title}
+                    </th>
+                  ))}
                 </tr>
-              ))}
+              </thead>
+              <tbody>
+                {transactionHist.map((transaction) => (
+                  <tr className="border border-b-gray-400 border-collapse border-t-0">
+                    <td className="px-4 py-1">{transaction.Receiver}</td>
+                    <td className="px-4 py-1">{transaction.Type}</td>
+                    <td className="px-4 py-1">{transaction.Date}</td>
+                    <td className="px-4 py-1">{transaction.Amount}</td>
+                  </tr>
+                ))}
+              </tbody>
             </table>
           </div>
         </div>
