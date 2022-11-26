@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineMail } from "react-icons/ai";
+import { AiOutlineMail, AiOutlineShoppingCart } from "react-icons/ai";
 import { BsPersonCircle } from "react-icons/bs";
 import { UserAuth } from "../context/AuthContext";
 import Creditcard from "../assets/images/creditcard.png";
@@ -13,6 +13,7 @@ export const Content = () => {
       Type: "Shopping",
       Date: "03 Dec 2020",
       Amount: "$75.62",
+      icon: <AiOutlineShoppingCart />,
     },
     {
       Receiver: "ElectroMen Market",
@@ -124,8 +125,11 @@ export const Content = () => {
               </thead>
               <tbody>
                 {transactionHist.map((transaction) => (
-                  <tr className="border border-b-gray-400 border-collapse border-t-0">
-                    <td className="px-4 py-1">{transaction.Receiver}</td>
+                  <tr className="border border-b-gray-400 border-collapse border-t-0 border-l-0 border-r-0">
+                    <td className="px-4 py-1 flex gap-2 items-center">
+                      {transaction.icon}
+                      {transaction.Receiver}
+                    </td>
                     <td className="px-4 py-1">{transaction.Type}</td>
                     <td className="px-4 py-1">{transaction.Date}</td>
                     <td className="px-4 py-1">{transaction.Amount}</td>

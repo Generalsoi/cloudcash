@@ -18,7 +18,7 @@ export const Dashboard = () => {
 
   return (
     <div
-      className="w-full h-screen flex items-start "
+      className="w-full h-screen flex items-start relative"
       style={{
         background:
           "linear-gradient(121.32deg, #FFFFFF 10.96%, #FFFFFF 72%, #FFFFFF 99.98%)",
@@ -27,10 +27,10 @@ export const Dashboard = () => {
       <div
         className={`${
           open ? "w-72" : "w-20"
-        } duration-200 min-h-screen border border-r-[#595656] border-t-0 border-l-0 border-b-0 relative`}
+        } duration-200 min-h-screen border border-r-[#595656] border-t-0 border-l-0 border-b-0 fixed`}
       >
         <Sidebar open={open} />
-        <div className="absolute -right-3 top-4 cursor-pointer">
+        <div className="absolute -right-3 top-4 cursor-pointer ">
           {open ? (
             <BsFillArrowLeftCircleFill
               onClick={handleOpen}
@@ -44,7 +44,7 @@ export const Dashboard = () => {
           )}
         </div>
       </div>
-      <div className={`w-full`}>
+      <div className={`w-full ${open ? "ml-72" : "ml-20"} duration-200`}>
         <Content />
       </div>
     </div>
