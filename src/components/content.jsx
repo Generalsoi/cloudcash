@@ -1,6 +1,7 @@
 import React from "react";
 import { AiOutlineMail, AiOutlineShoppingCart } from "react-icons/ai";
-import { BsPersonCircle } from "react-icons/bs";
+import { BsPersonCircle, BsTruck, BsPerson } from "react-icons/bs";
+import { BiRestaurant } from "react-icons/bi";
 import { UserAuth } from "../context/AuthContext";
 import Creditcard from "../assets/images/creditcard.png";
 
@@ -20,28 +21,33 @@ export const Content = () => {
       Type: "Shopping",
       Date: "14 Dec 2020",
       Amount: "$250.00",
+      icon: <BsTruck />,
     },
     {
       Receiver: "Fiorgio Restaurant",
       Type: "Food",
       Date: "07 Dec 2020",
       Amount: "$18.42",
+      icon: <BiRestaurant />,
     },
     {
       Receiver: "John Matthew Kane",
       Type: "Sport",
       Date: "06 Dec 2020",
       Amount: "$352",
+      icon: <BsPerson />,
     },
     {
       Receiver: "Ann Malin",
       Type: "Shopping",
       Date: "25 Nov 2020",
       Amount: "$425",
+      icon: <BsPerson />,
     },
   ];
 
-  // console.log (user)
+  const transactionHeadings = Object.keys(transactionHist[0]);
+  transactionHeadings.splice(-1, 1);
 
   return (
     <div className="font-quickSand">
@@ -116,7 +122,7 @@ export const Content = () => {
             <table className="table-auto w-full">
               <thead>
                 <tr>
-                  {Object.keys(transactionHist[0]).map((title) => (
+                  {transactionHeadings.map((title) => (
                     <th className="py-2 px-4 text-left text-gray-500">
                       {title}
                     </th>
@@ -126,13 +132,19 @@ export const Content = () => {
               <tbody>
                 {transactionHist.map((transaction) => (
                   <tr className="border border-b-gray-400 border-collapse border-t-0 border-l-0 border-r-0">
-                    <td className="px-4 py-1 flex gap-2 items-center">
+                    <td className="px-4 py-1 flex gap-2 items-center text-sm font-bold">
                       {transaction.icon}
                       {transaction.Receiver}
                     </td>
-                    <td className="px-4 py-1">{transaction.Type}</td>
-                    <td className="px-4 py-1">{transaction.Date}</td>
-                    <td className="px-4 py-1">{transaction.Amount}</td>
+                    <td className="px-4 py-1 text-sm text-[#C7C7C7]">
+                      {transaction.Type}
+                    </td>
+                    <td className="px-4 py-1 text-sm text-[#C7C7C7]">
+                      {transaction.Date}
+                    </td>
+                    <td className="px-4 py-1 text-right text-sm font-bold">
+                      {transaction.Amount}
+                    </td>
                   </tr>
                 ))}
               </tbody>
