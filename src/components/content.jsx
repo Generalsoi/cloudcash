@@ -151,7 +151,40 @@ export const Content = () => {
             </table>
           </div>
         </div>
-        <div></div>
+        <div className="md:w-[48%]">
+          <div>
+            <h2>Goals</h2>
+            <div className="flex items-center ">
+              <span>
+                <span>
+                  <p>$590</p>
+                  <p>12/20/20</p>
+                </span>
+                <span>
+                  <p>Holidays</p>
+                </span>
+              </span>
+              <span>
+                <span>
+                  <p>$300</p>
+                  <p>12/20/20</p>
+                </span>
+                <span>
+                  <p>Renovation</p>
+                </span>
+              </span>
+              <span>
+                <span>
+                  <p>$1200</p>
+                  <p>12/20/20</p>
+                </span>
+                <span>
+                  <p>x box</p>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
