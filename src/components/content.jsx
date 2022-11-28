@@ -164,7 +164,7 @@ export const Content = () => {
             </h2>
             <div className="flex items-center gap-5 ">
               <span
-                className="h-44 w-40 p-4 border rounded-2xl bg-white flex flex-col justify-between"
+                className="h-44 w-[33%] p-4 border rounded-2xl bg-white flex flex-col justify-between"
                 style={{
                   boxShadow:
                     "0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04)",
@@ -180,7 +180,7 @@ export const Content = () => {
                 </span>
               </span>
               <span
-                className="h-44 w-40 p-4 border rounded-2xl bg-white flex flex-col justify-between"
+                className="h-44 w-[33%] p-4 border rounded-2xl bg-white flex flex-col justify-between"
                 style={{
                   boxShadow:
                     "0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04)",
@@ -196,7 +196,7 @@ export const Content = () => {
                 </span>
               </span>
               <span
-                className="h-44 w-40 p-4 border rounded-2xl bg-white flex flex-col justify-between"
+                className="h-44 w-[33%] p-4 border rounded-2xl bg-white flex flex-col justify-between"
                 style={{
                   boxShadow:
                     "0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04)",
