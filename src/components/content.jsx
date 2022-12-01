@@ -3,6 +3,7 @@ import { AiOutlineMail, AiOutlineShoppingCart } from "react-icons/ai";
 import { BsPersonCircle, BsTruck, BsPerson } from "react-icons/bs";
 import { BiRestaurant } from "react-icons/bi";
 import { GiCommercialAirplane } from "react-icons/gi";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { UserAuth } from "../context/AuthContext";
 import Creditcard from "../assets/images/creditcard.png";
 import Holiday from "../assets/images/holidays.png";
@@ -298,7 +299,7 @@ export const Content = () => {
               <h2 className="font-bold text-xl mb-4">New transaction</h2>
               <div className="flex w-full items-center justify-between">
                 {newTransactionList.map((transaction) => (
-                  <span className="flex flex-col gap-1 justify-center items-center">
+                  <span className="flex flex-col gap-1 justify-center items-center hover:bg-gray-200 hover:rounded-lg hover:padding-3 cursor-pointer">
                     {transaction.img}
                     <p>{transaction.name}</p>
                   </span>
@@ -311,8 +312,18 @@ export const Content = () => {
                   <p>Add New</p>
                 </span>
               </div>
+              <div className="flex items-center w-full h-fit py-3 gap-4">
+                <div className="w-[50%]">
+                  <input type="text" className="h-10 w-full border rounded" />
+                </div>
+
+                <button className="w-[50%] h-10 border border-none rounded-lg flex items-center justify-center font-bold gap-3 bg-[#FFC145]">
+                  Send the transfer
+                  <MdOutlineKeyboardArrowRight />
+                </button>
+              </div>
             </div>
-            <img src={Greatloan} alt="" />
+            <img src={Greatloan} alt="greatloan" />
           </div>
         </div>
       </section>
