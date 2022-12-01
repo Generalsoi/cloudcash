@@ -102,7 +102,7 @@ export const Content = () => {
         </div>
       </nav>
 
-      <section className="p-6 flex items-start justify-between">
+      <section className="p-6 flex flex-col md:flex-row items-start justify-between gap-4 md:gap-0 ">
         <div className="md:w-[48%]">
           <div
             className="w-full h-fit p-6 bg-white border rounded-2xl "
@@ -317,7 +317,7 @@ export const Content = () => {
                   <input type="text" className="h-10 w-full border rounded" />
                 </div>
 
-                <button className="w-[50%] h-10 border border-none rounded-lg flex items-center justify-center font-bold gap-3 bg-[#FFC145]">
+                <button className="w-[50%] h-10 text-sm border border-none rounded-lg flex items-center justify-center font-bold gap-1 bg-[#FFC145]">
                   Send the transfer
                   <MdOutlineKeyboardArrowRight />
                 </button>
