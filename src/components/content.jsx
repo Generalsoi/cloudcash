@@ -8,6 +8,12 @@ import Creditcard from "../assets/images/creditcard.png";
 import Holiday from "../assets/images/holidays.png";
 import Innovation from "../assets/images/innovation.png";
 import Xbox from "../assets/images/xbox.png";
+import Ann from "../assets/images/ann.png";
+import Monica from "../assets/images/monica.png";
+import John from "../assets/images/john.png";
+import Mike from "../assets/images/mike.png";
+import Mia from "../assets/images/mia.png";
+import Greatloan from "../assets/images/greatloan.png";
 
 export const Content = () => {
   const { user } = UserAuth();
@@ -50,6 +56,29 @@ export const Content = () => {
     },
   ];
 
+  const newTransactionList = [
+    {
+      img: <img src={Ann} alt="ann" />,
+      name: "Ann",
+    },
+    {
+      img: <img src={Monica} alt="monica" />,
+      name: "Monica",
+    },
+    {
+      img: <img src={John} alt="john" />,
+      name: "John",
+    },
+    {
+      img: <img src={Mike} alt="mike" />,
+      name: "Mike",
+    },
+    {
+      img: <img src={Mia} alt="mia" />,
+      name: "Mia",
+    },
+  ];
+
   const transactionHeadings = Object.keys(transactionHist[0]);
   transactionHeadings.splice(-1, 1);
 
@@ -85,7 +114,11 @@ export const Content = () => {
               Cards
             </h3>
             <div className="flex items-center justify-between font-quickSand">
-              <img src={Creditcard} alt="user-credit-card" />
+              <img
+                src={Creditcard}
+                alt="user-credit-card"
+                className="w-[60%]"
+              />
               <div className="text-end">
                 <span className="flex flex-col mb-4">
                   <h2 className="text-3xl text-[#197BBD] font-bold">
@@ -253,6 +286,33 @@ export const Content = () => {
               </div>
               <p className="text-[#696969] font-bold text-xl">79%</p>
             </div>
+          </div>
+          <div className="mt-8 flex items-start">
+            <div
+              className="w-[70%] p-4 border border-none rounded-lg h-fit  "
+              style={{
+                boxShadow:
+                  "0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04)",
+              }}
+            >
+              <h2 className="font-bold text-xl mb-4">New transaction</h2>
+              <div className="flex w-full items-center justify-between">
+                {newTransactionList.map((transaction) => (
+                  <span className="flex flex-col gap-1 justify-center items-center">
+                    {transaction.img}
+                    <p>{transaction.name}</p>
+                  </span>
+                ))}
+
+                <span className="flex flex-col items-center">
+                  <span className="w-5 h-5 font-extrabold border border-none rounded-full flex items-center justify-center bg-[#FFC145]">
+                    +
+                  </span>
+                  <p>Add New</p>
+                </span>
+              </div>
+            </div>
+            <img src={Greatloan} alt="" />
           </div>
         </div>
       </section>
