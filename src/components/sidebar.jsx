@@ -9,7 +9,7 @@ import { TfiMedall } from "react-icons/tfi";
 import { AiTwotoneFileImage } from "react-icons/ai";
 import { BiLogOutCircle } from "react-icons/bi";
 
-export const Sidebar = ({ open }) => {
+export const Sidebar = ({ open, show }) => {
   const { logOut } = UserAuth();
   const [active, setActive] = useState(false);
 
@@ -28,13 +28,13 @@ export const Sidebar = ({ open }) => {
   ];
 
   return (
-    <div className="h-screen p-5 flex flex-col ">
+    <div className={`${!show && "hidden"} h-screen p-5 md:flex md:flex-col `}>
       <div className={`flex gap-2 items-end ${open ? "p-4" : "p-1"}`}>
         <img src={Logo} alt="cloudcashlogo" />
         <h1
           className={`${
             !open && "scale-0"
-          } text-[#0F4264] font-extrabold duration-200`}
+          } text-[#0F4264] font-extrabold duration-200 ${show && "text-white"}`}
         >
           Cloudcash
         </h1>
@@ -50,11 +50,17 @@ export const Sidebar = ({ open }) => {
             }`}
           >
             <span
-              className={`${!open && "h-10 w-10 m-0 hover:font-extrabold"}`}
+              className={`${!open && "h-10 w-10 m-0 hover:font-extrabold"} ${
+                show && "text-white"
+              }`}
             >
               {menu.src}
             </span>
-            <span className={`${!open && "hidden"} duration-200 `}>
+            <span
+              className={`${!open && "hidden"} ${
+                show && "text-white"
+              } duration-200 `}
+            >
               {menu.title}
             </span>
           </li>

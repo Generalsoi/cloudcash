@@ -12,9 +12,9 @@ export const Content = () => {
 
   return (
     <div className="font-quickSand">
-      <nav className="p-6 flex items-center justify-between ">
+      <nav className="p-6 flex flex-col-reverse md:flex-row items-start gap-4 md:gap-0 md:items-center justify-between ">
         <div>
-          <h1 className="text-5xl font-extrabold text-[#404040]">
+          <h1 className="text-2xl lg:text-5xl font-extrabold text-[#404040]">
             Weekly sumup
           </h1>
           <p className="text-[#AEAEAE]">
