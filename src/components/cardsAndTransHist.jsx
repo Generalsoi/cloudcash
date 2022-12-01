@@ -7,7 +7,7 @@ export const CardsAndTransHist = () => {
   transactionHeadings.splice(-1, 1);
 
   return (
-    <div className="md:w-[48%]">
+    <div className="w-full md:w-[48%]">
       <div
         className="w-full h-fit p-6 bg-white border rounded-2xl "
         style={{
@@ -45,7 +45,7 @@ export const CardsAndTransHist = () => {
       </div>
 
       <div
-        className="w-full h-fit mt-6 p-6 bg-white border rounded-2xl "
+        className="w-full h-fit mt-6 p-6 bg-white border rounded-2xl  "
         style={{
           boxShadow:
             "0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04)",
@@ -55,34 +55,36 @@ export const CardsAndTransHist = () => {
           Transaction history
         </h2>
 
-        <table className="table-auto w-full">
-          <thead>
-            <tr>
-              {transactionHeadings.map((title) => (
-                <th className="py-2 px-4 text-left text-gray-500">{title}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {transactionHist.map((transaction) => (
-              <tr className="border border-b-gray-400 border-collapse border-t-0 border-l-0 border-r-0">
-                <td className="px-4 py-1 flex gap-2 items-center text-sm font-bold">
-                  {transaction.icon}
-                  {transaction.Receiver}
-                </td>
-                <td className="px-4 py-1 text-sm text-[#C7C7C7]">
-                  {transaction.Type}
-                </td>
-                <td className="px-4 py-1 text-sm text-[#C7C7C7]">
-                  {transaction.Date}
-                </td>
-                <td className="px-4 py-1 text-right text-sm font-bold">
-                  {transaction.Amount}
-                </td>
+        <div className="overflow-x-scroll">
+          <table className="table-auto md:w-full ">
+            <thead>
+              <tr>
+                {transactionHeadings.map((title) => (
+                  <th className="py-2 px-4 text-left text-gray-500">{title}</th>
+                ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {transactionHist.map((transaction) => (
+                <tr className="border border-b-gray-400 border-collapse border-t-0 border-l-0 border-r-0">
+                  <td className="px-4 py-1 flex gap-2 items-center text-sm font-bold">
+                    {transaction.icon}
+                    {transaction.Receiver}
+                  </td>
+                  <td className="px-4 py-1 text-sm text-[#C7C7C7]">
+                    {transaction.Type}
+                  </td>
+                  <td className="px-4 py-1 text-sm text-[#C7C7C7]">
+                    {transaction.Date}
+                  </td>
+                  <td className="px-4 py-1 text-right text-sm font-bold">
+                    {transaction.Amount}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

@@ -5,9 +5,9 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 export const NewTransaction = () => {
   return (
-    <div className="mt-8 flex items-start">
+    <div className="mt-8 flex flex-col md:flex-row items-start gap-4 md:gap-0">
       <div
-        className="w-[70%] p-4 border border-none rounded-lg h-fit  "
+        className="w-full md:w-[70%] p-4 border border-none rounded-lg h-fit  "
         style={{
           boxShadow:
             "0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04)",

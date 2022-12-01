@@ -5,7 +5,7 @@ import { Goals } from "./goals";
 
 export const GoalsAndOutcome = () => {
   return (
-    <div className="md:w-[48%]">
+    <div className="w-full md:w-[48%]">
       <Goals />
       <Outcome />
 
