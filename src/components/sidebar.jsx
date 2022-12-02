@@ -51,7 +51,7 @@ export const Sidebar = ({ open, show }) => {
           >
             <span
               className={`${!open && "h-10 w-10 m-0 hover:font-extrabold"} ${
-                show && "text-white"
+                show ? "text-white" : "hidden lg:block"
               }`}
             >
               {menu.src}

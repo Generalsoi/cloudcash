@@ -32,12 +32,12 @@ export const Dashboard = () => {
       }}
     >
       <div
-        className={`${open ? "md:w-72" : "md:w-20"} ${
+        className={`${open ? "lg:w-72" : "lg:w-20"} ${
           !show ? "w-0 " : "w-72 bg-[#197BBD] duration-200"
-        } duration-200 min-h-screen md:border md:border-r-[#595656] md:border-t-0 md:border-l-0 md:border-b-0 fixed`}
+        } duration-200 min-h-screen lg:border lg:border-r-[#595656] lg:border-t-0 lg:border-l-0 lg:border-b-0 fixed`}
       >
         <Sidebar open={open} show={show} />
-        <div className="hidden md:block absolute -right-3 top-4 cursor-pointer ">
+        <div className="hidden lg:block absolute -right-3 top-4 cursor-pointer ">
           {open ? (
             <BsFillArrowLeftCircleFill
               onClick={handleOpen}
@@ -53,7 +53,7 @@ export const Dashboard = () => {
       </div>
       <div
         className={`w-full ${
-          open ? "md:ml-72" : "md:ml-20"
+          open ? "lg:ml-72" : "lg:ml-20"
         } ml-0  duration-200`}
       >
         <Content />
@@ -61,12 +61,12 @@ export const Dashboard = () => {
 
       {!show ? (
         <GiHamburgerMenu
-          className="md:hidden text-3xl absolute top-4 right-4 "
+          className="lg:hidden text-3xl absolute top-4 right-4 "
           onClick={handleShow}
         />
       ) : (
         <FaWindowClose
-          className="md:hidden text-3xl absolute top-4 right-4 "
+          className="lg:hidden text-3xl absolute top-4 right-4 "
           onClick={handleShow}
         />
       )}
