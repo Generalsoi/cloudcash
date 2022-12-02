@@ -29,7 +29,7 @@ export const Content = () => {
         </div>
       </nav>
 
-      <section className="p-6 flex flex-col md:flex-row items-start justify-between gap-4 md:gap-0 ">
+      <section className="p-6 w-full flex flex-col lg:flex-row items-start justify-between gap-4 lg:gap-0 ">
         <CardsAndTransHist />
 
         <GoalsAndOutcome />

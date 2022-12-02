@@ -7,7 +7,7 @@ export const CardsAndTransHist = () => {
   transactionHeadings.splice(-1, 1);
 
   return (
-    <div className="w-full md:w-[48%]">
+    <div className="w-full lg:w-[48%]">
       <div
         className="w-full h-fit p-6 bg-white border rounded-2xl "
         style={{
