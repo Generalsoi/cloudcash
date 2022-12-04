@@ -1,6 +1,6 @@
-# Onose's Love Calculator
+# Cloudcash By Soi
 
-This is a love calculator application built using react.js, and tailwindCSS.
+This is a react finance web application built using react.js, tailwind css and firebase.
 
 ## Table of contents
 
@@ -13,10 +13,10 @@ This is a love calculator application built using react.js, and tailwindCSS.
 
 ## Overview
 
-This is a love calculator that I built using react.js, and tailwindCSS. It allows for users to be able to
-enter two names: the first being their name, and the second being the name of their crush or supposed lover,
-and then on clicking the "calculator icon", the application would calculate the love percentage between the
-two individuals, and return a value, with a message.
+This is a fintech dummy application that I built using react.js, tailwindCSS and firebase. It allows for users to be able to
+signup or register using an email and password, and then be redirected to a dashboard where their registered email address would be
+displayed at the top right corner of the desktop screen or at the top left corner of the mobile screen. It also allows for users to be
+automatically logged in whenever they revisit the site after previously signing up. Users can also login using their gmail accounts directly.
 
 ### Screenshot
 
@@ -24,20 +24,23 @@ two individuals, and return a value, with a message.
 
 ### Links
 
-- Solution URL: (https://github.com/Generalsoi/loveCalculator)
-- Live Site URL: (https://onose-love-calculator.netlify.app/)
+- Solution URL: (https://github.com/Generalsoi/cloudcash)
+- Live Site URL: (https://cloudcashbysoi.vercel.app/)
 
 ### Built with
 
 - Tailwind CSS
 - [React](https://reactjs.org/) - JS library
 - React router v6
+- [Firebase] (https://firebase.google.com/docs?gclid=CjwKCAiAp7GcBhA0EiwA9U0mtn8zTFrQeVL-fGoOylcGxx2PzcwEEu6Rzpd-bRhuY4c1xfU9arjLzRoCsPwQAvD_BwE&gclsrc=aw.ds)
 
 ### What I learned
 
-I learned about how to persist state using localStorage, and I also learned how to handle caching properly.
+I learned how to use firebase for user authentication
 
-It was a beautiful project to work on.
+I learned how to make a dashboard responsive.
+
+I also learned some more about state management, and passing props down child components.
 
 ## Author
 
