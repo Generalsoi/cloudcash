@@ -28,13 +28,17 @@ export const Sidebar = ({ open, show }) => {
   ];
 
   return (
-    <div className={`${!show && "hidden"} h-screen p-5 md:flex md:flex-col `}>
+    <div
+      className={` h-screen p-5 md:flex md:flex-col ${
+        show ? "block bg-[#6b562b] w-72 text-white" : "hidden "
+      } `}
+    >
       <div className={`flex gap-2 items-end ${open ? "p-4" : "p-1"}`}>
         <img src={Logo} alt="cloudcashlogo" />
         <h1
           className={`${
             !open && "scale-0"
-          } text-[#0F4264] font-extrabold duration-200 ${show && "text-white"}`}
+          } text-[#0F4264] font-extrabold duration-200 `}
         >
           Cloudcash
         </h1>
@@ -50,17 +54,11 @@ export const Sidebar = ({ open, show }) => {
             }`}
           >
             <span
-              className={`${!open && "h-10 w-10 m-0 hover:font-extrabold"} ${
-                show ? "text-white" : "hidden lg:block"
-              }`}
+              className={`${!open && "h-10 w-10 m-0 hover:font-extrabold"} `}
             >
               {menu.src}
             </span>
-            <span
-              className={`${!open && "hidden"} ${
-                show && "text-white"
-              } duration-200 `}
-            >
+            <span className={`${!open && "hidden"} duration-200 `}>
               {menu.title}
             </span>
           </li>

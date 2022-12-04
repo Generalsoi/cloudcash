@@ -7,6 +7,9 @@ module.exports = {
         quickSand: ["Quicksand", "sans-serif"],
       },
     },
+    // screens: {
+    //   tab: { min: "760px", max: "770px" },
+    // },
   },
   plugins: [],
 };
