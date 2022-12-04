@@ -9,7 +9,7 @@ import { FaWindowClose } from "react-icons/fa";
 export const Dashboard = () => {
   const [loader, setLoader] = useState(true);
   const [open, setOpen] = useState(true);
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   setTimeout(() => {
     setLoader(false);
