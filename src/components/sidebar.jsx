@@ -29,7 +29,7 @@ export const Sidebar = ({ open, show }) => {
 
   return (
     <div
-      className={` h-screen p-5 md:flex md:flex-col ${
+      className={` h-screen p-5 lg:flex lg:flex-col ${
         show ? "block bg-[#6b562b] w-72 text-white" : "hidden "
       } `}
     >
