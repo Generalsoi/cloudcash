@@ -34,7 +34,7 @@ export const Dashboard = () => {
       <div
         className={`${
           open ? "lg:w-72" : "lg:w-20"
-        }  duration-200 min-h-screen border-r-none lg:border lg:border-r-[#595656] lg:border-t-0 lg:border-l-0 lg:border-b-0 fixed`}
+        }  duration-200 min-h-screen border-r-none z-20 lg:border lg:border-r-[#595656] lg:border-t-0 lg:border-l-0 lg:border-b-0 fixed`}
       >
         <Sidebar open={open} show={show} />
         <div className="hidden lg:block absolute -right-3 top-4 cursor-pointer ">

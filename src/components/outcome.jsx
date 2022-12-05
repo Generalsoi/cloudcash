@@ -24,7 +24,7 @@ export const Outcome = () => {
         <span className="h-8 w-8 border border-none rounded-lg bg-[#DDF9E4] flex items-center justify-center">
           <BsTruck className="text-[#22A447]" />
         </span>
-        <div className="w-[80%] flex flex-col justify-start gap-2">
+        <div className="w-[80%] flex flex-col justify-start gap-2 ">
           <span className="relative h-2 w-full border border-none rounded-lg bg-[#AEAEAE]">
             <span className="absolute left-0 top-0 h-2 w-[25%] bg-[#22A447] border border-none rounded-lg"></span>
           </span>
