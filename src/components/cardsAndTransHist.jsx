@@ -9,7 +9,7 @@ export const CardsAndTransHist = () => {
   return (
     <div className="w-full lg:w-[48%]">
       <div
-        className="w-full h-fit p-6 bg-white border rounded-2xl "
+        className="w-full h-fit p-5 lg:p-6 bg-white border rounded-2xl "
         style={{
           boxShadow:
             "0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04)",
@@ -19,7 +19,11 @@ export const CardsAndTransHist = () => {
           Cards
         </h3>
         <div className="flex items-center justify-between font-quickSand">
-          <img src={Creditcard} alt="user-credit-card" className="w-[60%]" />
+          <img
+            src={Creditcard}
+            alt="user-credit-card"
+            className="w-[50%] lg:w-[60%]"
+          />
           <div className="text-end">
             <span className="flex flex-col mb-4">
               <h2 className="text-3xl text-[#197BBD] font-bold">$2850.34</h2>
@@ -59,14 +63,19 @@ export const CardsAndTransHist = () => {
           <table className="table-auto md:w-full ">
             <thead>
               <tr>
-                {transactionHeadings.map((title) => (
-                  <th className="py-2 px-4 text-left text-gray-500">{title}</th>
+                {transactionHeadings.map((title, index) => (
+                  <th key={index} className="py-2 px-4 text-left text-gray-500">
+                    {title}
+                  </th>
                 ))}
               </tr>
             </thead>
             <tbody>
-              {transactionHist.map((transaction) => (
-                <tr className="border border-b-gray-400 border-collapse border-t-0 border-l-0 border-r-0">
+              {transactionHist.map((transaction, index) => (
+                <tr
+                  key={index}
+                  className="border border-b-gray-400 border-collapse border-t-0 border-l-0 border-r-0"
+                >
                   <td className="px-4 py-1 flex gap-2 items-center text-sm font-bold">
                     {transaction.icon}
                     {transaction.Receiver}

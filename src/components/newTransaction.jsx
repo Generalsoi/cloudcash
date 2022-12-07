@@ -15,8 +15,11 @@ export const NewTransaction = () => {
       >
         <h2 className="font-bold text-xl mb-4">New transaction</h2>
         <div className="flex w-full items-center justify-between">
-          {newTransactionList.map((transaction) => (
-            <span className="flex flex-col gap-1 justify-center items-center hover:bg-gray-200 hover:rounded-lg hover:padding-3 cursor-pointer">
+          {newTransactionList.map((transaction, index) => (
+            <span
+              key={index}
+              className="flex flex-col gap-1 justify-center items-center hover:bg-gray-200 hover:rounded-lg hover:padding-3 cursor-pointer"
+            >
               {transaction.img}
               <p>{transaction.name}</p>
             </span>
