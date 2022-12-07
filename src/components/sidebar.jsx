@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Logo from "../assets/images/logo.png";
 import { UserAuth } from "../context/AuthContext";
 import { BsListUl } from "react-icons/bs";
@@ -11,7 +11,6 @@ import { BiLogOutCircle } from "react-icons/bi";
 
 export const Sidebar = ({ open, show }) => {
   const { logOut } = UserAuth();
-  const [active, setActive] = useState(false);
 
   const handleLogout = () => {
     logOut();
