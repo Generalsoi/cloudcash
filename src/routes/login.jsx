@@ -21,14 +21,15 @@ export const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoader(true);
     setError("");
 
     try {
       await loginUser(email, password);
-      setLoader(true);
-      navigate("/dashboard");
+      setLoader(false);
+      navigate("/");
     } catch (error) {
-      setError(error.message);
+      setError(error.message.slice(22, -2).replaceAll("-", " "));
       setLoader(false);
       console.log(error.message);
     }
@@ -38,14 +39,14 @@ export const Login = () => {
     try {
       await googleSignIn();
     } catch (error) {
-      setError(error.message);
+      setError(error.message.slice(22, -2).replaceAll("-", " "));
       console.log(error);
     }
   };
 
   useEffect(() => {
     if (user != null) {
-      navigate("/dashboard");
+      navigate("/");
     }
   }, []);
 

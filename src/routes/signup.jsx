@@ -25,9 +25,9 @@ export const Signup = () => {
     try {
       await createUser(email, password);
       setIsLoading(false);
-      navigate("/dashboard");
+      navigate("/");
     } catch (error) {
-      setError(error.message);
+      setError(error.message.slice(22, -2).replaceAll("-", " "));
       setIsLoading(false);
     }
   };
@@ -94,7 +94,7 @@ export const Signup = () => {
             <div className="w-full h-12 flex items-center justify-center">
               <p className="text-sm">
                 Already have an account?
-                <Link to="/" className="text-[#3977e3]">
+                <Link to="/login" className="text-[#3977e3]">
                   Login here!
                 </Link>
               </p>
